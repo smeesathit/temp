@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+	<head lang="th">
+		<meta charset="utf-8">
+		<title>My JavaScript Samples</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Adding favicon with link tag --> 
+		<link rel="icon" type="image/png" sizes="24x24" href="favicon.png"/>
+		
+		<!-- Using W3 CSS -->
+		<link rel="stylesheet" type="text/css" href="css/w3.css">
+		<!-- link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" -->
+		<link rel="stylesheet" type="text/css" href="css/w3-theme-teal.css">
+		<!-- link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css" -->
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+		<!-- Using external JavaScript file-->
+		<script src="javascript/sidebar.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+		<!--
+		<script src="javascript/protractor.js"></script>
+-->
+	</head>
+
+	<body>
+	<!-- Side Navigation -->
+		<nav class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left w3-center" style="display:none" id="mySidebar">
+			<h1 class="w3-xxlarge w3-text-theme">เมนูหลัก</h1>
+			<button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+			<a href="index.html" class="w3-bar-item w3-button">หน้าหลัก</a>
+			<a href="my_info.html" class="w3-bar-item w3-button">ข้อมูลของฉัน</a>
+			<a href="my_favorite_song.html" class="w3-bar-item w3-button">เพลงโปรด</a>
+			<a href="my_favorite_clip.html" class="w3-bar-item w3-button">คลิปโปรด</a>
+			<a href="my_angular_sample.html" class="w3-bar-item w3-button">จาวาสคริปต์โปรด</a>
+			<a href="my_animate_css_sample.html" class="w3-bar-item w3-button">ภาพเคลื่อนไหว CSS โปรด</a>
+		</nav>
+
+		<!-- Header -->
+		<header class="w3-container w3-theme w3-padding" id="myHeader">
+			<i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+			<div class="w3-center">
+			<h4>BEAUTIFUL RESPONSIVE WEB SITES</h4>
+			<h1 class="w3-xxxlarge w3-animate-bottom">เว็บส่วนตัวของฉัน</h1>
+				<div class="w3-padding-32">
+					<a class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey">BUILT WITH W3.CSS</a>
+				</div>
+			</div>
+		</header>
+
+		<div class="w3-container w3-padding-32">
+			<h2 class="w3-center">ตัวอย่างการใช้ AngularJS เฟรมเวิร์ค</h2>
+			
+			<!-- First sample: show greeting message.-->
+			<div>
+				<header class="w3-container w3-theme-l3 w3-padding w3-center">
+				<h3>แสดงคำทักทาย</h3>
+			</header>
+			<div ng-app="">
+				<p>ชื่อ: <input type="text" placeholder="กรอกชื่อของคุณ" ng-model="name"></p>
+				<p>สวัสดี คุณ{{ name }}</p> 
+			</div>			
+			</div>
+
+			<!-- Second sample: add and remove list items-->
+			<div>
+				<header class="w3-container w3-theme-l3 w3-padding w3-center">
+					<h3>รายการ</h3>
+				</header>
+				<div ng-app="myShoppingList" ng-cloak ng-controller="myCtrl" class="w3-card-2 w3-margin" style="max-width:400px;">
+					<header class="w3-container w3-light-grey w3-padding-16">
+						<h3>รายการซื้อของ</h3>
+					</header>
+					<ul class="w3-ul">
+						<li ng-repeat="x in products" class="w3-padding-16">
+							{{x}}
+							<span ng-click="removeItem($index)" style="cursor:pointer;" class="w3-right w3-margin-right">
+								<img src="icons/ic_highlight_off_black_24dp_1x.png" alt="delete" title="delete item">
+							</span>
+						</li>
+					</ul><!-- First sample: show greeting message.-->
+			<div>
+				<header class="w3-container w3-theme-l3 w3-padding w3-center">
+				<h3>แสดงคำทักทาย</h3>
+			</header>
+			<div ng-app="">
+				<p>ชื่อ: <input type="text" placeholder="กรอกชื่อของคุณ" ng-model="name"></p>
+				<p>สวัสดี คุณ{{ name }}</p> 
+			</div>			
+			</div>
+
+			<!-- Second sample: add and remove list items-->
+			<div>
+				<header class="w3-container w3-theme-l3 w3-padding w3-center">
+					<h3>รายการ</h3>
+				</header>
+				<div ng-app="myShoppingList" ng-cloak ng-controller="myCtrl" class="w3-card-2 w3-margin" style="max-width:400px;">
+					<header class="w3-container w3-light-grey w3-padding-16">
+						<h3>รายการซื้อของ</h3>
+					</header>
+					<ul class="w3-ul">
+						<li ng-repeat="x in products" class="w3-padding-16">
+							{{x}}
+							<span ng-click="removeItem($index)" style="cursor:pointer;" class="w3-right w3-margin-right">
+								<img src="icons/ic_highlight_off_black_24dp_1x.png" alt="delete" title="delete item">
+							</span>
+						</li>
+					</ul>
+		<!-- 
+	 <ul class="w3-ul" id="list">
+		<li ng-repeat="x in products" class="w3-padding-16">{{x}} <a href="#list" ng-click="removeItem($index)" class="w3-right w3-margin-right"><img src="icons/ic_highlight_off_black_24dp_1x.png" alt="delete" title="delete item"></span> </a> </li>
+
+	</ul>
+		 -->
+				<div class="w3-container w3-light-grey w3-padding-16">
+					<div class="w3-row w3-margin-top">
+						<div class="w3-col s10">
+							<input placeholder="พิมพ์รายการซื้ัอที่นี่" ng-model="addMe" class="w3-input w3-border w3-padding">
+						</div>
+						<div class="w3-col s2">
+							<button ng-click="addItem()" class="w3-btn w3-padding w3-green">เพิ่ม</button>
+						</div>
+					</div>
+					<p class="w3-text-red">{{errortext}}</p>
+				</div>
+			</div>
+			<!-- Script for adding and removing list items -->
+			
+			</div>
+			<hr> 
+			<h3>Powered by <a href="https://angularjs.org/" class="w3-btn w3-theme-dark" target="_blank">AngularJS</a></h3>
+		</div>
+		<br>
+
+		<!-- Footer -->
+		<footer class="w3-container w3-theme-dark w3-padding-16">
+			<h4>Developed by Dr.Sooksathit Meesathit</h4>
+			<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+			<div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+				<span class="w3-text w3-theme-light w3-padding">Go To Top</span>    
+				<a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+				<i class="fa fa-chevron-circle-up"></i></span></a>
+			</div>
+			<p>For information check out <a href="https://www.w3schools.com/w3css/w3css_references.asp" class="w3-btn w3-theme-light" target="_blank">W3.CSS Reference</a></p>
+		</footer>
+	</body>
+</html>
